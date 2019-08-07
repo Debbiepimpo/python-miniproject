@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
 <h3>Add Task</h3>
 <div class="row">
     <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
@@ -9,7 +9,7 @@
                 <select id="category" name="category_name">
                     <option value="" disabled selected>Choose Category</option>
                     {% for cat in categories %}
-                    <option value="{{cat_category_name}}">{{cat_category_name}}</option>
+                    <option value="{{ cat_category_name }}">{{ cat_category_name }}</option>
                     {% endfor %}
                 </select>
                 <label>Task Category</label>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">today</i>
-                <input id="matfix" name="due_date" type="text" class="datepicker">
+                <input id="due_date" name="due_date" type="text" class="datepicker">
                 <label for="icon_prefix">Due Date</label>
             </div>
         </div>
@@ -51,7 +51,5 @@
             </button>
         </div>
     </form>
-</div>
-
-
+</div> 
 {% endblock %}
